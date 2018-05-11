@@ -6,18 +6,16 @@ services:
     image: postgres:9.6-alpine
     networks:
       - internal_network
-### Uncomment to enable DB persistance
-#    volumes:
-#      - ./postgres:/var/lib/postgresql/data
+    volumes:
+      - /home/ubuntu/mastodon_data/postgresql:/var/lib/postgresql/data
 
   redis:
     restart: always
     image: redis:4.0-alpine
     networks:
       - internal_network
-### Uncomment to enable REDIS persistance
-#    volumes:
-#      - ./redis:/data
+    volumes:
+      - /home/ubuntu/mastodon_data/redis:/data
 
 #  es:
 #    restart: always
@@ -65,12 +63,76 @@ services:
       - db
       - redis
 
-  sidekiq:
+  sidekiq_default:
     build: .
     image: tootsuite/mastodon
     restart: always
     env_file: .env.production
-    command: bundle exec sidekiq -q default -q mailers -q pull -q push
+    command: bundle exec sidekiq -c 24 -q default
+    depends_on:
+      - db
+      - redis
+    networks:
+      - external_network
+      - internal_network
+    volumes:
+      - ./public/packs:/mastodon/public/packs
+      - ./public/system:/mastodon/public/system
+
+  sidekiq_mailers_pull:
+    build: .
+    image: tootsuite/mastodon
+    restart: always
+    env_file: .env.production
+    command: bundle exec sidekiq -c 12 -q mailers -q pull
+    depends_on:
+      - db
+      - redis
+    networks:
+      - external_network
+      - internal_network
+    volumes:
+      - ./public/packs:/mastodon/public/packs
+      - ./public/system:/mastodon/public/system
+
+  sidekiq_default_push_a:
+    build: .
+    image: tootsuite/mastodon
+    restart: always
+    env_file: .env.production
+    command: bundle exec sidekiq -c 12 -q default -q push
+    depends_on:
+      - db
+      - redis
+    networks:
+      - external_network
+      - internal_network
+    volumes:
+      - ./public/packs:/mastodon/public/packs
+      - ./public/system:/mastodon/public/system
+
+  sidekiq_default_push_b:
+    build: .
+    image: tootsuite/mastodon
+    restart: always
+    env_file: .env.production
+    command: bundle exec sidekiq -c 12 -q default -q push
+    depends_on:
+      - db
+      - redis
+    networks:
+      - external_network
+      - internal_network
+    volumes:
+      - ./public/packs:/mastodon/public/packs
+      - ./public/system:/mastodon/public/system
+
+  sidekiq_default_push_c:
+    build: .
+    image: tootsuite/mastodon
+    restart: always
+    env_file: .env.production
+    command: bundle exec sidekiq -c 12 -q default -q push
     depends_on:
       - db
       - redis
