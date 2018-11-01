@@ -107,7 +107,7 @@ export default class Compose extends React.PureComponent {
             <ComposeFormContainer />
             {multiColumn && (
               <div className='drawer__inner__mastodon'>
-                <img alt='' draggable='false' src="https://hinabita.com/wp-content/uploads/2018/09/akanechankawaii-150x150.png" />
+                <img alt='' draggable='false' src={elephantUIPlane} />
               </div>
             )}
           </div>}
