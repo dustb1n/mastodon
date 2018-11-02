@@ -8,7 +8,8 @@ import { Map as ImmutableMap, fromJS } from 'immutable';
 const normalizeAccount = (state, account) => state.set(account.id, fromJS({
   followers_count: account.followers_count,
   following_count: account.following_count,
-  statuses_count: account.statuses_count,
+  //statuses_count: account.statuses_count,
+  statuses_count: 0,
 }));
 
 const normalizeAccounts = (state, accounts) => {
