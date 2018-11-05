@@ -82,7 +82,7 @@ class ActivityPub::ProcessAccountService < BaseService
     @account.avatar_remote_url = image_url('icon')  unless skip_download?
     @account.header_remote_url = image_url('image') unless skip_download?
     @account.public_key        = public_key || ''
-    @account.statuses_count    = outbox_total_items    if outbox_total_items.present?
+    @account.statuses_count    = 0
     @account.following_count   = following_total_items if following_total_items.present?
     @account.followers_count   = followers_total_items if followers_total_items.present?
     @account.moved_to_account  = @json['movedTo'].present? ? moved_account : nil
