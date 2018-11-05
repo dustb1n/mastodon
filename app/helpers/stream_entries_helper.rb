@@ -61,8 +61,8 @@ module StreamEntriesHelper
   def account_description(account)
     prepend_str = [
       [
-        number_to_human(account.statuses_count, strip_insignificant_zeros: true),
-        I18n.t('accounts.posts', count: account.statuses_count),
+        number_to_human(0, strip_insignificant_zeros: true),
+        I18n.t('accounts.posts', count: 0),
       ].join(' '),
 
       [
