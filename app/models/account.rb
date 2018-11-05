@@ -358,7 +358,7 @@ class Account < ApplicationRecord
 
   class << self
     def readonly_attributes
-      super - %w(statuses_count following_count followers_count)
+      super - %w(following_count following_count followers_count)
     end
 
     def domains
