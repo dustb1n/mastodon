@@ -25,7 +25,7 @@ class Export
   end
 
   def total_statuses
-    account.statuses_count
+    0
   end
 
   def total_follows
