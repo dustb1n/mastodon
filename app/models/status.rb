@@ -465,7 +465,7 @@ class Status < ApplicationRecord
     return if direct_visibility?
 
     if association(:account).loaded?
-      account.update_attribute(:statuses_count, account.statuses_count + 1)
+      account.update_attribute(:statuses_count, 1)
     else
       Account.where(id: account_id).update_all('statuses_count = COALESCE(statuses_count, 0) + 1')
     end
