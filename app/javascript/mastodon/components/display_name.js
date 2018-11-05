@@ -17,7 +17,7 @@ export default class DisplayName extends React.PureComponent {
     if (others && others.size > 1) {
       suffix = `+${others.size}`;
     } else {
-      suffix = <span className='display-name__account'>@{account.get('acct')}</span>;
+      suffix = <span className='display-name__account'>"あ"+@{account.get('acct')}</span>;
     }
 
     return (
