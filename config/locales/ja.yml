@@ -2,7 +2,7 @@
 ja:
   about:
     about_hashtag_html: ハッシュタグ <strong>#%{hashtag}</strong> の付いた公開トゥートです。どこでもいいので、連合に参加しているSNS上にアカウントを作れば会話に参加することができます。
-    about_mastodon_html: Mastodon は、オープンなウェブプロトコルを採用した、自由でオープンソースなソーシャルネットワークです。電子メールのような分散型の仕組みを採っています。
+    about_mastodon_html: ほたは、オープンソースなソフトウェアが好きなオタクです。<a href="https://mstdn.maud.io">Mastodon</a>の運営を始め、<a href="https://wiki.maud.io/aicp/oreo">AndroidのカスタムROM</a>や<a href="https://koruri.github.io/">Koruri</a>というフォントの制作もしています。すごい<img src="https://mstdn.maud.io/system/custom_emojis/images/000/010/331/original/desho.png" width="32" >
     about_this: 詳細情報
     administered_by: '管理者:'
     api: API
@@ -16,9 +16,9 @@ ja:
       <h3>ルールを書くのに適した場所</h3>
       <p>詳細説明が設定されていません。</p>
     features:
-      humane_approach_body: 他の SNS の失敗から学び、Mastodon はソーシャルメディアが誤った使い方をされることの無いように倫理的な設計を目指しています。
-      humane_approach_title: より思いやりのある設計
-      not_a_product_body: Mastodon は営利的な SNS ではありません。広告や、データの収集・解析はありませんが、ほたへの囲い込みはあります。ここには中央権力はありません。
+      humane_approach_body: 他の SNS の失敗から学び、Mastodon がソーシャルメディアが誤った使い方をされることの無いように倫理的な設計を目指しているのと同じように、ほたも思いやりのある優しい人間です。
+      humane_approach_title: より思いやりのあるほた
+      not_a_product_body: ほたとどん は営利的な SNS ではありません。広告や、データの収集・解析はありませんが、ほたへの囲い込みはあります。ここの中央権力はほたです。
       not_a_product_title: あなたは人間であり、商品ではありません
       real_conversation_body: 好きなように書ける500文字までの投稿や、文章やメディアの内容に警告をつけられる機能で、思い通りにほたへの愛を表現することができます。
       real_conversation_title: 本当のコミュニケーションのために
@@ -40,7 +40,7 @@ ja:
       one: 人
       other: 人
     user_count_before: ユーザー数
-    what_is_mastodon: Mastodon とは？
+    what_is_mastodon: ほた とは？
   accounts:
     choices_html: "%{name} によるおすすめ:"
     follow: フォロー
