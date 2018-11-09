@@ -765,7 +765,7 @@ ja:
         one: "%{count} 本の動画"
         other: "%{count} 本の動画"
     boosted_from_html: "%{acct_link} からブースト"
-    content_warning: '閲覧注意: %{warning}'
+    content_warning: 'ほたが好きそうなコンテンツ: %{warning}'
     disallowed_hashtags:
       one: '許可されていないハッシュタグが含まれています: %{tags}'
       other: '許可されていないハッシュタグが含まれています: %{tags}'
@@ -790,7 +790,7 @@ ja:
   stream_entries:
     pinned: 固定されたトゥート
     reblogged: さんがブースト
-    sensitive_content: 閲覧注意
+    sensitive_content: ほたが好きそうなコンテンツ
   terms:
     body_html: |
       <h2>プライバシーポリシー</h2>
